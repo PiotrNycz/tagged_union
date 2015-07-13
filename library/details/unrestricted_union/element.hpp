@@ -1,4 +1,19 @@
-#pragma once
+
+/// \file
+// Tagged library
+//
+//  Copyright Piotr Nycz 2015
+//
+//  Use, modification and distribution is subject to the
+//  Boost Software License, Version 1.0. (See accompanying
+//  file LICENSE_1_0.txt or copy at
+//  http://www.boost.org/LICENSE_1_0.txt)
+//
+// Project home: https://github.com/PiotrNycz/tagged_union
+//
+
+#ifndef TAGGED_UNRESTRICTED_UNION_ELEMENT_HPP
+#define TAGGED_UNRESTRICTED_UNION_ELEMENT_HPP
 
 #include <type_traits>
 #include <details/index.hpp>
@@ -29,3 +44,5 @@ template <std::size_t Index, typename Union>
 using unrestricted_union_element_t = typename unrestricted_union_element<Index, Union>::type;
 
 } // namespace exp
+
+#endif // TAGGED_UNRESTRICTED_UNION_ELEMENT_HPP

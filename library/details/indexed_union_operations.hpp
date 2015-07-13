@@ -1,4 +1,19 @@
-#pragma once
+
+/// \file
+// Tagged library
+//
+//  Copyright Piotr Nycz 2015
+//
+//  Use, modification and distribution is subject to the
+//  Boost Software License, Version 1.0. (See accompanying
+//  file LICENSE_1_0.txt or copy at
+//  http://www.boost.org/LICENSE_1_0.txt)
+//
+// Project home: https://github.com/PiotrNycz/tagged_union
+//
+
+#ifndef TAGGED_DETAILS_INDEXED_UNION_OPERATIONS_HPP
+#define TAGGED_DETAILS_INDEXED_UNION_OPERATIONS_HPP
 
 #include <details/tuple_traits.hpp>
 #include <unrestricted_union.hpp>
@@ -72,7 +87,7 @@ private:
     }
 
     template <std::size_t Index, typename Data, typename Operation, typename ...Arg>
-    static auto find_and_do(std::size_t, Data& data, Operation&& operation, Arg&& ...arg) -> typename std::enable_if<(Index >= tuple_traits<Data>::size())>::type
+    static auto find_and_do(std::size_t, Data&, Operation&& operation, Arg&& ...) -> typename std::enable_if<(Index >= tuple_traits<Data>::size())>::type
     {
         // sentinel - out of range
     }
@@ -109,4 +124,5 @@ private:
 
 } // namespace exp
 
+#endif // TAGGED_DETAILS_INDEXED_UNION_OPERATIONS_HPP
 
